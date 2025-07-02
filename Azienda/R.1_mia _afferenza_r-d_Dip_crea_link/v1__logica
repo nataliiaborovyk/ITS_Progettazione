@@ -1,0 +1,63 @@
+Creazione linl - responsabilita Dipartimento (versione 1)
+
+! Primo caso - creo impiegato con link afferenza da Impiegato
+	-> __init__(nome, cognome, nascita, stipendio, dipartimento, data)
+		-> set_nome(..)
+		-> set_cognome(..)
+		-> nascita
+		-> set_stipendio(..)
+		-> link afferenza = None
+		-> set_link_afferenza(dipartimento, data)
+			-> salto "if dipartimento_aff is None and data_afferenza is None:"
+			-> salto caso di errore
+			-> entro nel "else:"
+				-> tramide dipartimento uso metodo "creaLinkAfferenza(self, data_afferenza)"
+					-> verifico se "if impiegato.get_link_afferenza():" esiste 
+						-> "get_link_afferenza()" mi restituisce None quindi non entro nel if
+					-> creo link con impiegato, self e data_aff
+					-> aggiungo link nel elenco_impiegadi del Dipartimento
+					-> aggiorno atributo _afferenza del Impiegato
+
+
+
+! Secondo caso - creo impiegato senza link afferenza da Impiegato
+	-> __init__(nome, cognome, nascita, stipendio)
+		-> set_nome(..)
+		-> set_cognome(..)
+		-> nascita
+		-> set_stipendio(..)
+		-> link afferenza = None
+		-> set_link_afferenza(None, None)
+			-> entro in "if dipartimento_aff is None and data_afferenza is None:"
+				-> salto " if self._afferenza is not None:" perche link non esiste ancora
+				-> self._afferenza asegno None
+
+! Terzo caso - cambio link afferenza da Impiegato
+	-> set_link_afferenza(dipartimento, data)
+		-> salto "if dipartimento_aff is None and data_afferenza is None:"
+		-> salto caso di errore
+		-> entro nel "else:"
+			-> tramide dipartimento uso metodo "creaLinkAfferenza(self, data_afferenza)"
+				-> entro nel "if impiegato.get_link_afferenza():" perche link gia esistte 
+					-> tramide impiegato riasalgo al link poi il dipartimento del link poi il metodo _remove_link_impiegato e come argomento passo link_vecchio (cosi cancello vechio link)
+				-> creo link con impiegato, self e data_aff
+				-> aggiungo link nel elenco_impiegadi del Dipartimento
+				-> aggiorno atributo _afferenza del Impiegato
+
+! Quarto caso - elimino link afferenza (set_link_afferenza(None, None) da Impiegato
+	-> set_link_afferenza(None, None)
+		-> entro nel "if dipartimento_aff is None and data_afferenza is None:"
+			-> entro nel "if self._afferenza is not None:"
+				-> uso il metodo remove_link_afferenza()
+					-> entro "if self._afferenza is not None:"
+						-> tramide link risalfo a dimartimento
+						-> uso metodo _remove_link_impiegato del dipartimento, passo vecchio link
+						-> aggiorno link 
+
+
+! Quarto caso - elimino link afferenza (set_link_afferenza(None, None) da Impiegato
+			
+
+
+
+				

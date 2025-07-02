@@ -1,0 +1,44 @@
+Impiegato
+	get_nome()
+	get_cognome()
+	get_nascita()
+	get_stipendio()
+	set_nome()
+	set_cognome()
+	set_stipendio()
+
+	is_coinvolto(progetto)
+	__contains__()
+
+	get_elenco_progetti()
+	get_link_progetto(progetto)
+
+	_add_link_imp_prog(link)
+	_remove_link_imp_prog(link)
+
+	add_progetto(progetto, data)
+	remove_progetto(progetto)
+
+Progetto
+	get_nome()
+	get_budget()
+	set_nome()
+	set_budget()
+
+	is_coinvolto(impiegato)
+	__contains__()
+	data_coinvolgimento(impiegato)
+	ultimo_impiegato_coinvolto()
+	ultimo()
+
+	get_coinvolti()
+	get_link_impiegato(impiegato)
+
+	_add_link_imp_prog(link)
+	_remove_link_imp_prog(link)
+
+	add_impiegato(impiegato, data)
+	remove_impiegato(impiegato)
+
+
+

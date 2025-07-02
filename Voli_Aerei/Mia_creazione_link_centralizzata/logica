@@ -1,0 +1,82 @@
+aerop_citta
+	
+	Aeroporto - responsabilita creare link 1..1
+		init
+			aggiungo citta
+			controllo se citta not None
+		get_link()
+		set_link(Citta)
+			controllo se link gia esiste prima di cambiare / impostare
+				se si 
+					controllo se andiamo a creare un dublicato
+					_remove_link(vechio)
+				altrimenti creo link
+				aggiorno set(link) Citta
+		_remove_link(link)
+			controllo !=
+			controllo se link == self.get_link()  (cosi vechio link non passa)
+				self.link = None
+				aggiungo in set(vecchi_link) in Citta
+				rimuovo da set(link) Citta
+
+	Citta - set[aerop_citta._link] 0..*
+		get_frozenset()
+		_aggiorna_set(link)
+			controllo !=
+			controllo se esiste gia nel set()
+			aggiungo link nel set()
+		_aggiorna_set(vecchi_link)
+			controllo !=
+			controllo se esiste gia nel set()
+			aggiungo link nel set()			
+		_remove_link(link)
+			controllo !=
+			controllo se link nel set()
+				rimuovo link da set()
+
+volo_comp
+	Volo - responsabilita creare link 1..1 | immutabile link
+		init 
+			aggiungo CompaniaAerea
+			controllo se compania not None
+		get_link()
+		_crea_link(CompaniaAerea)
+			controllo se link gia esiste prima di impostare
+				se si 
+					controlla se link che andiamo a creare esiste gia nel set()
+					_remove_link(vechio)
+				altrimenti creo link
+				aggiorno set(link) Volo
+		#_remove_link(link)
+			controllo !=
+			controllo se link == self.get_link()  (cosi vechio link non passa)
+				self.link = None
+				aggiungo in set(vecchi_link) in Citta
+				rimuovo da set(link) Citta
+	CompaniaAerea - set[volo_comp._link] 0..*
+		get_frozenset()
+		_aggiorna_set(link)
+			controllo !=
+			controllo se esiste gia nel set()
+			aggiungo link nel set()
+		_aggiorna_set(vecchi_link)
+			controllo !=
+			controllo se esiste gia nel set()
+			aggiungo link nel set()			
+		_remove_link(link)
+			controllo !=
+			controllo se link nel set()
+				rimuovo link da set()
+
+
+arrivo
+	Volo - responsabilita creare link 1..1 | immutabile link
+	Aeroporto - set[arrivo._link] 0..*
+
+partenza
+	Volo - responsabilita creare link 1..1 | immutabile link
+	Aeroporto - set[partenza._link] 0..*
+
+cit_naz
+	Citta - responsabilita creare link 1..1 
+	Nazione - set[cit_naz._link] 0..*

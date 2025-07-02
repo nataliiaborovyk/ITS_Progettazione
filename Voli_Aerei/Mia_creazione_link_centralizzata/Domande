@@ -1,0 +1,10 @@
+Domande
+
+- Posso definire un attributo None prima di impostarlo con set_atributo? (per evitare AttributeError)
+
+- Per importare i tipi e le class definiti in moduli diversi posso usare if Type_checking: .... ma non è un import vero. Esiste un altro metodo a importare cose necessarie pero evitare import circolare?
+
+-  medodi di classe conviene fare privati quando link non va creato direttamente da class assocciazione?
+
+- quando link è immutabile non bisogna creare _remove_link?
+

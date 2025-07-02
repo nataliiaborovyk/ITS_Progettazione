@@ -1,0 +1,59 @@
+Creazione linl - responsabilita Impiegato
+
+! Primo caso - creo impiegato con link afferenza
+	-> __init__(nome, cognome, nascita, stipendio, dipartimento, data)
+		-> set_nome(..)
+		-> set_cognome(..)
+		-> nascita
+		-> set_stipendio(..)
+		-> set_link_afferenza(dipartimento, data)
+			-> salto caso errore
+			-> entro nel "try"
+				-> get_link_afferenza() da errore perche self._afferenza ancora non esiste
+				-> entro nel "except" -> pass
+			-> entro nel "if dipartimento_aff: " 
+				-> creo link afferenza 
+				-> aggiorno _elenco_impiegati nel Dipartimento
+
+! Secondo caso - creo impiegato senza link afferenza
+	-> __init__(nome, cognome, nascita, stipendio)
+		-> set_nome(..)
+		-> set_cognome(..)
+		-> nascita
+		-> set_stipendio(..)
+		-> set_link_afferenza(None, None)
+			-> salto caso errore
+			-> entro nel "try"
+				-> get_link_afferenza() da errore perche self._afferenza ancora non esiste
+				-> entro nel "except" -> pass
+			-> salto "if dipartimento_aff: "  perche è None
+			-> entro nel "else"
+				-> self._afferenza = None (link è None)
+
+! Terzo caso - cambio link afferenza
+	-> set_link_afferenza(dipartimento, data)
+		-> salto caso errore
+		-> entro nel "try"
+			-> entro nel "if self.get_link_afferenza():"
+				-> tramide link risalgo al suo dipartimento e tramide metodo _remove_impiegato(..) che ha Dipartimento elimino link dal _elenco_impiegati 
+			-> entro nel "except" -> pass
+		-> entro nel "if dipartimento_aff: " 
+			-> creo link afferenza 
+			-> aggiorno _elenco_impiegati nel Dipartimento
+
+! Quarto caso - elimino link afferenza (set_link_afferenza(None, None))
+	-> set_link_afferenza(None, None)
+		-> salto caso errore
+		-> entro nel "try"
+			-> entro nel "if self.get_link_afferenza():" (c'e vechio link)
+				-> tramide link risalgo al suo dipartimento e tramide metodo _remove_impiegato(..) che ha Dipartimento elimino link dal _elenco_impiegati 
+			-> entro nel "except" -> pass
+		-> salto "if dipartimento_aff: "  perche è None
+		-> entro nel "else"
+			-> self._afferenza = None (link è None)
+
+			
+
+
+
+				
