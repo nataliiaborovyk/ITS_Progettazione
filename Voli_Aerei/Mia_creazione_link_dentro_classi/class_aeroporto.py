@@ -66,11 +66,12 @@ class Aeroporto:
 		# caso di errore
 		if link.get_aeroporto() != self:
 			raise ValueError(f"Link fornito non riguarda aeroporto {self.get_nome()} ")	
-		if self.get_link_aerop_citta() == link:   #serve solo per evitare di usare questo metodo con vechio link che riguarda self
-			self._aeroporto_citta = None
-			#TODO aggiornare set citta
-			link.get_citta()._aggiorna_elenco_vecchi_aeroporti(link)
-			link.get_citta()._solo_remove_link_aerop_citta(link)
+		if self.get_link_aerop_citta() != link:   #serve solo per evitare di usare questo metodo con vechio link che riguarda self
+			raise ValueError("Il link fornito non è piu attuale")
+		self._aeroporto_citta = None
+		link.get_citta()._aggiorna_elenco_vecchi_aeroporti(link)
+		link.get_citta()._solo_remove_link_aerop_citta(link)
+
 		
 
 # collegamento con class Volo, associzaone - arrivo
