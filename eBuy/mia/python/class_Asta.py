@@ -96,7 +96,7 @@ class Asta(PostOggetto):
     
     def ultimo_bid(self, i: datetime) -> Bid | None:
         
-        ultimo_link: Optional[asta_bid] = None    # si scrive cosi?????
+        ultimo_link: asta_bid._link | None = None   
         for l in self._elenco_link_asta_bid:
             if l.get_bid().get_istante() <= i:
                 if ultimo_link is None or ultimo_link.get_bid().get_istante() < l.get_bid().get_istante():
