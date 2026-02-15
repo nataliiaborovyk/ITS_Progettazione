@@ -1,0 +1,37 @@
+Specifica della classe RiparazioneTerminata
+
+Le istanze di questa classe rappresentano riparazioni di veicoli che sono terminate.
+
+
+
+
+=== Vincoli esterni
+
+[V.RiparazioneTerminata.riconsegna_dopo_accettazione]
+Per ogni rt:RiparazioneTerminata,
+	il valore dell'attributo 'riconsegna' deve essere successivo al valore dell'attributo 'accettazione'
+
+*oppure*
+
+Per ogni rt:RiparazioneTerminata,
+	rt.riconsegna > rt.accettazione
+
+
+
+
+
+
+=== Operazioni di classe
+
+durata_minuti(): Intero > 0
+precondizioni: nessuna
+
+postcondizioni:
+	- L'operazione non modifica il livello estensionale
+	- Il risultato "result" è così definito:
+
+
+		Sia r il valore dell'attributo 'riconsegna' di 'this'
+		Sia a il valore dell'attributo 'accettazione' di 'this'
+
+		"result" è uguale a r - a, espresso in minuti (arrotondato per eccesso)

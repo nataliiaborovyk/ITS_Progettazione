@@ -1,0 +1,40 @@
+
+
+Impiegati e Studenti 1 - Raffinamento dei requisiti
+
+1. Requisiti sulle persone
+	1.1. nome
+	1.2. cognome
+	1.3. codice fiscale
+	1.4. data di nascita
+	1.5. genere, almeno uno tra
+		1.5.1. uomo (v. req. 2)
+		1.5.2. donna (v. req. 3)
+	1.6. occupazione, al massimo una delle due (ma anche nessuna) tra
+		1.6.1. impiegato (v. req. 4)
+		1.6.2. studente (v. req. 7)
+
+2. Requisiti sugli uomini
+	2.1. posizione militare
+
+3. Requisiti sulle donne
+	3.1. numero di maternità (un intero non negativo)
+
+4. Requisiti sugli impiegati
+	4.1. stipendio (un reale maggiore o uguale a zero)
+	4.2. il ruolo, uno tra 
+		4.2.1. segretario
+		4.2.2. direttore
+		4.2.3. progettista (v. req. 5)
+
+5. Requisiti sui progettisti
+	5.1. sono impiegati (v. req. 4)
+	5.2. progetti di cui è responsabile (anche nessuno) (v. req. 6)
+
+6. Requisiti sui progetti
+	6.1. nome (una stringa)
+	6.2. responsabile, un progettista (v. req. 5)
+
+7. Requisiti sugli studenti
+	7.1. sono persone (v. req. 1)
+	7.2. numero di matricola (intero non negativo, univoca)

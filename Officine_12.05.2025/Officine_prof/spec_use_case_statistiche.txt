@@ -1,0 +1,52 @@
+Specifica dello Use-Case 'Statistiche'
+
+
+modelli_riparazioni_in_periodo(inizio: Data, fine: Data): Modello [0..*]
+
+// I modelli di veicoli che sono stati oggetto di riparazione nel periodo dato
+
+  precondizioni:
+  	inizio <= fine
+
+  postcondizioni:
+  	- l'operazione non fa side-effect
+  		- (oppure) l'operazione non modifica i dati (oggetti e link)
+
+  	- Il risultato "result" è così definito
+
+  	- sia R l'insieme delle istanze r: Riparazione tali che
+  		- se r non è istanza di RiparazioneTerminata, r.inizio <= fine
+  		- se r: RiparazioneTerminata, il periodo
+  			(r.accettazione, r.riconsegna) si sovrappone
+  			al periodo (inizio, fine)
+
+  	- Sia V l'insieme delle istanze v:Veicolo tali che esiste 
+  		un link rip_veic che coinvolge v e un elemento r contenuto in R
+  		(oppure) un link (v, r): rip_veic tale che r è in R
+
+  	- Sia result l'insieme delle istanze m:Modello tali che
+  		esiste un link (m, v): mod_veic tale che v è in V
+
+
+Per esercizio:
+1) I proprietari che possiedono il maggior numero di veicoli.
+2) Data un'officina, il dipendente che vi lavora da meno tempo.
+
+
+
+=== Sovrapposizione di periodi
+(a, r) e (i, f) sono sovrapposti se
+a <= f e r >= i
+
+  			i              f
+  			|--------------|
+  	a		   r
+  	|----------|
+  				|-----|
+  						|---------|
+
+  		|------------------------------|
+
+  		|---------------------------------------
+  					  |----------------------------
+

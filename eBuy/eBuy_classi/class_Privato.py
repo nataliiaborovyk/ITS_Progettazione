@@ -21,7 +21,7 @@ class Privato(Utente):
     def get_tipo_utente(self):     
         return "Utente privato"
     
-    #collegamento con class Bid, associazione - bid_ut
+#collegamento con class Bid, associazione - bid_ut
 
     def get_elenco_link_bid_ut(self) -> frozenset[bid_ut._link]:
         return frozenset(self._elenco_link_bid_ut)
@@ -34,4 +34,4 @@ class Privato(Utente):
         self._elenco_link_bid_ut.add(link)
 
 
-    # eredita metodi get e str da Utente
+# eredita metodi get e str da Utente

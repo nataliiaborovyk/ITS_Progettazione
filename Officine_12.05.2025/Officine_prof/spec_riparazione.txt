@@ -1,0 +1,12 @@
+Specifica della classe Riparazione
+
+
+=== Vincoli esterni
+
+[V.Riparazione.accettazione_dopo_immatricolazione]
+
+Per ogni r:Riparazione
+	sia a l'anno di r.accettazione.
+	Sia v l'istanza di Veicolo che partecipa all'unico link 'rip_veic' che coinvolge r.
+	Deve essere vero che v.immatricolazione <= a
+

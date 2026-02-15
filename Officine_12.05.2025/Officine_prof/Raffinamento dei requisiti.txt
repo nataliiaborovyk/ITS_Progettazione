@@ -1,0 +1,50 @@
+Officine 1 - Raffinamento dei requisiti
+
+0. Requisiti sulle persone
+	0.1. nome
+	0.2. cognome
+	0.3. codice fiscale
+	0.4. indirizzo
+	0.5. numero di telefono
+	0.6. non ci sono persone che non sono né dipendenti, né direttori, né proprietari di veicoli
+
+1. Requisiti sulle officine
+	1.1. nome
+	1.2. indirizzo
+	1.3. i dipendenti che vi lavorano (v. req. 2)
+		1.3.1. per ognuno, il numero di anni di servizio presso l'officina
+	1.4. il direttore (v. req. 3)
+	1.5. numero di dipendenti (un intero >= 0, calcolabile da req. 1.3)
+
+2. Requisiti sui dipendenti
+	2.1. sono persone (v. req. 0)
+	2.2. officine in cui lavora (anche nessuna) (v. req. 1)
+		2.2.1. per ognuna, gli anni di servizio (v. req. 1.3.1)
+
+3. Requisiti sui direttori
+	3.1. sono persone (v. req. 0)
+	3.2. data di nascita
+	3.3. officine che dirige (anche nessuna) (v. req. 1)
+
+4. Requisiti sulle riparazioni di veicoli
+	4.1. codice (unico)
+	4.2. veicolo (v. req. 6)
+	4.3. istante di accettazione
+	4.4. istante di riconsegna, se e solo se la riparazione è terminata
+		4.4.1. l'istante di riconsegna deve essere successivo all'istante di accettazione
+	4.5. le officine che se ne occupano (almeno una) (v. req. 5)
+
+5. Requisiti sui proprietari di veicoli
+	5.1. sono persone (v. req. 0)
+	5.2. i veicoli che possiede, anche nessuno (v. req. 6)
+
+6. Requisiti sui veicoli
+	6.1. modello (v. req. 7)
+	6.2. targa (unica)
+	6.3. anno di immatricolazione
+	6.4. proprietari (almeno uno) (v. req. 5)
+
+7. Requisiti sui modelli
+	7.1. tipo (automobile, motociclo, ciclomotore, autocarro, ecc.)
+	7.2. nome
+	7.3. casa produttrice

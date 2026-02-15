@@ -1,0 +1,45 @@
+
+Ordini e fatture 1 - Raffinamento dei requisiti
+
+1. Requisiti sui dipartimenti
+	1.1. nome (una stringa, univoco)
+	1.2. indirizzo (v. req. 5)
+	1.3. direttore (v. req. 2)
+
+2. Requisiti sui direttori
+	2.1. nome
+	2.2. cognome
+	2.3. codice fiscale
+	2.4. data di nascita
+	2.5. luogo di nascita (v. req. 6)
+	2.6. anni di servizio
+
+3. Requisiti sui fornitori
+	3.1. ragione sociale (una stringa)
+	3.2. partita IVA (una stringa numerica di 11 caratteri)
+	3.3. indirizzo (v. req. 5)
+	3.4. numero di telefono (una stringa)
+	3.5. indirizzo email (una stringa secondo lo standard)
+
+4. Requisiti sugli ordini
+	4.1. dipartimento che lo ha stupulato (v. req. 1)
+	4.2. data di stipula
+	4.3. fornitore (v. req. 3)
+	4.4. descrizione (una stringa)
+	4.5. importo imponibile (un reale >= 0)
+	4.6. aliquota IVA (un numero reale tra 0 e 1 inclusi)
+	4.7. stato, uno tra:
+		4.7.1. in preparazione
+		4.7.2. inviato
+		4.7.3. da saldare
+		4.7.4. saldato
+
+5. Requisiti sugli indirizzi
+	5.1. via (una stringa)
+	5.2. numero civico (una stringa)
+	5.3. CAP (una stringa di cinque caratteri numerici)
+
+6. Requisiti sui luoghi
+	6.1. città
+	6.2. regione
+	6.3. nazione

@@ -1,0 +1,21 @@
+Specifica della classe Dipendente
+
+Ogni istanza di questa classe rappresenta un dipendente della catena di officine
+
+
+== Operazioni di classe
+
+anni_servizio(o: Officina): Intero >= 0
+
+  precondizioni:
+  	esiste un link dell'associazione 'lavora' che coinvolge 'this' e o
+
+  postcondizioni:
+  	- l'operazione non modifica i dati (oggetti e link)
+  		- o, equivalentemente, l'operazione non fa side-effect
+
+  	- viene restituito il valore "result", definito come segue:
+
+  	Sia 'i' il valore dell'attributo 'inizio_servizio' dell'unico link 'lavora' che coinvolge 'this' e o
+
+  	Sia 'result' il numero di anni tra 'i' e 'adesso'

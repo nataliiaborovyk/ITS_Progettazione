@@ -1,0 +1,25 @@
+
+
+Raffinamento dei requisiti - Esercitazioni Universitarie
+
+1. Requisiti sui corsi
+	1.1. nome
+	1.2. crediti (un numero razionale > 0)
+	1.3. anno accademico (un intero)
+	1.4. i docenti (almeno uno) (v. req. 2)
+	1.5. esercitazioni (v. req. 3) (anche nessuna)
+
+2. Requisiti sui docenti
+	2.1. nome
+	2.2. corsi insegnati, un numero qualsiasi (v. req. 1)
+
+3. Requisiti sulle esercitazioni
+	3.1. i corsi che la trattano (v. req. 1)
+	3.2. codice (una stringa, univoca)
+	3.3. esercizi (almeno uno) (v. req. 4)
+
+4. Requisiti sugli esercizi
+	4.1. testo
+	4.2. soluzione (una stringa)
+	4.3. esercitazioni in cui è stato presentato ("trattato") (v. req. 3)
+		4.3.1. tra esse, quelle in cui è stato anche risolto
