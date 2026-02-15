@@ -102,7 +102,6 @@ create table ristorante (
     -- VINCOLI DI INCLUSIONE 
     -- v.inclusione: Ristorante(id) occorre in ris_tip(ristorante)     
     -- v.inclusione: Ristorante(id) occorre in period_chius(ristorante)
-    -- v.inclusione: Ristorante(id) occorre in ris_citt(ristorante) 
 );
 
 -- associazione ris_pc,  tra PeriodoChiusura - Ristorante
